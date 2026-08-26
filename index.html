@@ -28,6 +28,9 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style data-purpose="custom-utilities">
+    html {
+      scroll-behavior: smooth;
+    }
     .italic-serif {
       font-family: 'Georgia', serif;
       font-style: italic;
@@ -56,37 +59,63 @@
       </div>
       <!-- Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a class="text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors" href="#">HOME</a>
-        <a class="text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors" href="#">ABOUT US</a>
+        <a class="text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors" href="#home">HOME</a>
+        <a class="text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors" href="#about">ABOUT US</a>
         <div class="relative group">
           <button class="flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors">
             SERVICES
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
           </button>
+          <div class="absolute left-0 top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-30">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#services">Hospital &amp; Clinic Staffing</a>
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#services">Long-Term Care Staffing</a>
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#services">School District Staffing</a>
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#services">Travel &amp; Contract</a>
+            </div>
+          </div>
         </div>
         <div class="relative group">
           <button class="flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors">
             JOBS
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
           </button>
+          <div class="absolute left-0 top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-30">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#jobs">Registered Nurses (RN)</a>
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#jobs">Licensed Practical Nurses (LPN)</a>
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#jobs">Certified Nursing Assistants (CNA)</a>
+              <a class="block px-5 py-2.5 text-sm text-gray-600 hover:text-brand-blue hover:bg-brand-bgLight transition-colors" href="#jobs">Allied &amp; School Health</a>
+            </div>
+          </div>
         </div>
       </nav>
       <!-- CTA -->
       <div class="hidden sm:block">
-        <a class="bg-brand-dark text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-black transition-colors" href="#">
+        <a class="bg-brand-dark text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-black transition-colors" href="#contact">
           CONTACT US
         </a>
       </div>
       <!-- Mobile Menu Button -->
-      <button class="md:hidden text-brand-blue">
+      <button id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-brand-blue">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
       </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 max-w-7xl mx-auto">
+      <nav class="flex flex-col space-y-1 bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
+        <a class="px-4 py-3 rounded-lg text-brand-blue font-semibold text-sm hover:bg-brand-bgLight transition-colors" href="#home">HOME</a>
+        <a class="px-4 py-3 rounded-lg text-brand-blue font-semibold text-sm hover:bg-brand-bgLight transition-colors" href="#about">ABOUT US</a>
+        <a class="px-4 py-3 rounded-lg text-brand-blue font-semibold text-sm hover:bg-brand-bgLight transition-colors" href="#services">SERVICES</a>
+        <a class="px-4 py-3 rounded-lg text-brand-blue font-semibold text-sm hover:bg-brand-bgLight transition-colors" href="#jobs">JOBS</a>
+        <a class="mt-2 px-4 py-3 rounded-full bg-brand-dark text-white font-semibold text-sm text-center hover:bg-black transition-colors" href="#contact">CONTACT US</a>
+      </nav>
     </div>
   </header>
   <!-- END: Header -->
 
   <!-- BEGIN: Hero Section -->
-  <main class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative overflow-hidden">
+  <main id="home" class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative overflow-hidden">
     <!-- Left Content -->
     <div class="flex-1 w-full relative z-10">
       <!-- Subheading -->
@@ -135,5 +164,256 @@
     </div>
   </main>
   <!-- END: Hero Section -->
+
+  <!-- BEGIN: Stats Bar -->
+  <section class="bg-brand-blue text-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div>
+        <p class="text-4xl lg:text-5xl font-medium mb-1">15+</p>
+        <p class="text-sm uppercase tracking-wide text-blue-100">Years of Experience</p>
+      </div>
+      <div>
+        <p class="text-4xl lg:text-5xl font-medium mb-1">1K+</p>
+        <p class="text-sm uppercase tracking-wide text-blue-100">Healthcare Professionals</p>
+      </div>
+      <div>
+        <p class="text-4xl lg:text-5xl font-medium mb-1">200+</p>
+        <p class="text-sm uppercase tracking-wide text-blue-100">Partner Facilities</p>
+      </div>
+      <div>
+        <p class="text-4xl lg:text-5xl font-medium mb-1">24/7</p>
+        <p class="text-sm uppercase tracking-wide text-blue-100">Staffing Support</p>
+      </div>
+    </div>
+  </section>
+  <!-- END: Stats Bar -->
+
+  <!-- BEGIN: About Section -->
+  <section id="about" class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <div class="flex-1 w-full">
+      <div class="rounded-[40px] overflow-hidden bg-gray-200 custom-shape shadow-xl">
+        <img alt="Healthcare professionals collaborating" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkVlDu_Q1PTs7e62dPUrTg9VhjmdIT5qkBfhP4WA5XsKwE9ypQApfls_YPHdlR6K21a1eBvL8QmSbIyz5VzovDKshGnwT9CWYx6q1mzmQGXvz2aymLMb3NDE3i9WE7tJ3Qpm1iaJvsXERJuYPx9TpcschfPwzZkltYQlVC13VPzVJ-jEKk4TB3EpdNmKXvQ_u3FdITHzIvqtWVHjmjVw0Kb_GBW0u1Vu_DsuQWfBkIQgIvdBFYEp02WTT7XlU_gHqpA" />
+      </div>
+    </div>
+    <div class="flex-1 w-full">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="w-4 h-4 rounded-full bg-brand-blue"></span>
+        <span class="text-brand-blue uppercase text-sm font-medium tracking-wide">About Us</span>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-medium text-brand-dark leading-tight mb-6">
+        Connecting Skilled Talent With <span class="italic-serif text-brand-blue">Trusted Care</span>
+      </h2>
+      <p class="text-gray-500 text-lg mb-6 leading-relaxed">
+        Blue Diamond Medical Staffing partners with hospitals, clinics, long-term care facilities, and school districts to deliver dependable staffing solutions. We match credentialed professionals to the roles where they make the greatest impact.
+      </p>
+      <ul class="space-y-4 mb-8">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="text-gray-600">Rigorously vetted and credentialed professionals</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="text-gray-600">Flexible temporary, contract &amp; direct-hire placement</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="text-gray-600">Responsive, around-the-clock staffing support</span>
+        </li>
+      </ul>
+      <a class="inline-flex items-center justify-center bg-brand-dark text-white px-8 py-4 rounded-full text-base font-medium hover:bg-black transition-colors" href="#contact">
+        Get in Touch
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </a>
+    </div>
+  </section>
+  <!-- END: About Section -->
+
+  <!-- BEGIN: Services Section -->
+  <section id="services" class="bg-brand-bgLight">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="flex items-center justify-center space-x-3 mb-6">
+          <span class="w-4 h-4 rounded-full bg-brand-blue"></span>
+          <span class="text-brand-blue uppercase text-sm font-medium tracking-wide">Our Services</span>
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-medium text-brand-dark leading-tight">
+          Staffing Solutions For Every <span class="italic-serif text-brand-blue">Setting</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="rotate(180 12 12)"></path><path d="M3 21h18M9 8h1m4 0h1M9 12h1m4 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-dark mb-3">Hospitals &amp; Clinics</h3>
+          <p class="text-gray-500 leading-relaxed">Qualified nursing and allied health staff to keep patient care running smoothly.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 21V7l9-4 9 4v14M3 21h18M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-dark mb-3">Long-Term Care</h3>
+          <p class="text-gray-500 leading-relaxed">Reliable CNAs, LPNs, and RNs for nursing homes and assisted-living facilities.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M12 14l6.16-3.42a12 12 0 01.84 4.42 12 12 0 01-7 2 12 12 0 01-7-2 12 12 0 01.84-4.42L12 14z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-dark mb-3">School Districts</h3>
+          <p class="text-gray-500 leading-relaxed">School nurses and health aides who support student wellbeing every day.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-dark mb-3">Travel &amp; Contract</h3>
+          <p class="text-gray-500 leading-relaxed">Short-term and travel assignments matched to your schedule and specialty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Services Section -->
+
+  <!-- BEGIN: Why Choose Us Section -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="flex items-center justify-center space-x-3 mb-6">
+        <span class="w-4 h-4 rounded-full bg-brand-blue"></span>
+        <span class="text-brand-blue uppercase text-sm font-medium tracking-wide">Why Choose Us</span>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-medium text-brand-dark leading-tight">
+        The Blue Diamond <span class="italic-serif text-brand-blue">Difference</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center px-4">
+        <div class="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <h3 class="text-xl font-semibold text-brand-dark mb-3">Fully Credentialed</h3>
+        <p class="text-gray-500 leading-relaxed">Every professional is licensed, background-checked, and compliance-verified before placement.</p>
+      </div>
+      <div class="text-center px-4">
+        <div class="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <h3 class="text-xl font-semibold text-brand-dark mb-3">Fast Placement</h3>
+        <p class="text-gray-500 leading-relaxed">Our responsive team fills open shifts quickly, so your facility is never short-staffed.</p>
+      </div>
+      <div class="text-center px-4">
+        <div class="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <h3 class="text-xl font-semibold text-brand-dark mb-3">People First</h3>
+        <p class="text-gray-500 leading-relaxed">We invest in our professionals and clients alike, building lasting relationships built on trust.</p>
+      </div>
+    </div>
+  </section>
+  <!-- END: Why Choose Us Section -->
+
+  <!-- BEGIN: Jobs / CTA Section -->
+  <section id="jobs" class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-16 lg:pb-24">
+    <div class="bg-brand-blue rounded-[40px] px-8 md:px-16 py-14 lg:py-20 text-center text-white relative overflow-hidden">
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h2 class="text-3xl lg:text-5xl font-medium leading-tight mb-6">
+          Ready To Find Your Next <span class="italic-serif">Opportunity?</span>
+        </h2>
+        <p class="text-blue-100 text-lg mb-10">
+          Whether you're a healthcare professional seeking your next role or a facility in need of trusted staff, we're here to help.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a class="inline-flex items-center justify-center bg-white text-brand-blue px-8 py-4 rounded-full text-base font-semibold hover:bg-gray-100 transition-colors" href="#contact">Browse Open Jobs</a>
+          <a class="inline-flex items-center justify-center bg-brand-dark text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-black transition-colors" href="#contact">Request Staff</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Jobs / CTA Section -->
+
+  <!-- BEGIN: Footer -->
+  <footer id="contact" class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <div class="flex items-center space-x-3 mb-5">
+            <svg fill="none" height="40" viewBox="0 0 48 48" width="40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 0L44.7846 12V36L24 48L3.21539 36V12L24 0Z" fill="#1C3887"></path>
+              <path d="M24 6L39.5885 15V33L24 42L8.41154 33V15L24 6Z" fill="#3B5998"></path>
+              <path d="M24 10L36.1244 17V31L24 38L11.8756 31V17L24 10Z" fill="#5C7EC1"></path>
+              <path d="M12 24L16 20L20 28L28 16L32 26L36 24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <div>
+              <p class="text-lg font-serif font-bold uppercase tracking-wide leading-tight">Blue Diamond</p>
+              <p class="text-xs text-gray-400 tracking-widest uppercase">Medical Staffing</p>
+            </div>
+          </div>
+          <p class="text-gray-400 leading-relaxed">Expert healthcare &amp; education staffing solutions for the facilities and communities that depend on them.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold uppercase tracking-wide text-sm mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a class="hover:text-white transition-colors" href="#home">Home</a></li>
+            <li><a class="hover:text-white transition-colors" href="#about">About Us</a></li>
+            <li><a class="hover:text-white transition-colors" href="#services">Services</a></li>
+            <li><a class="hover:text-white transition-colors" href="#jobs">Jobs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold uppercase tracking-wide text-sm mb-5">Services</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a class="hover:text-white transition-colors" href="#services">Hospitals &amp; Clinics</a></li>
+            <li><a class="hover:text-white transition-colors" href="#services">Long-Term Care</a></li>
+            <li><a class="hover:text-white transition-colors" href="#services">School Districts</a></li>
+            <li><a class="hover:text-white transition-colors" href="#services">Travel &amp; Contract</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold uppercase tracking-wide text-sm mb-5">Contact</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-brand-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              <span>123 Care Avenue, Suite 100</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-brand-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              <a class="hover:text-white transition-colors" href="tel:+18005550100">(800) 555-0100</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-brand-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              <a class="hover:text-white transition-colors" href="mailto:info@bluediamondstaffing.com">info@bluediamondstaffing.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-400 text-sm">&copy; 2026 Blue Diamond Medical Staffing. All rights reserved.</p>
+        <div class="flex items-center gap-5 text-gray-400 text-sm">
+          <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+  <script>
+    // Mobile menu toggle
+    (function () {
+      var btn = document.getElementById('mobileMenuBtn');
+      var menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var isOpen = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
