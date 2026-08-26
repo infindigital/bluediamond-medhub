@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Diamond Medical Staffing</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2C49A4',
+              blueLight: '#395BB5',
+              dark: '#2A1F1D',
+              bgLight: '#F5F4F0',
+              textDark: '#231E1E'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style data-purpose="custom-utilities">
+    .italic-serif {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+    }
+    .custom-shape {
+      border-radius: 40px 160px 40px 160px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-brand-textDark bg-white">
+  <!-- BEGIN: Header -->
+  <header class="bg-brand-bgLight py-4 px-6 md:px-12 lg:px-20 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <svg fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 0L44.7846 12V36L24 48L3.21539 36V12L24 0Z" fill="#1C3887"></path>
+          <path d="M24 6L39.5885 15V33L24 42L8.41154 33V15L24 6Z" fill="#3B5998"></path>
+          <path d="M24 10L36.1244 17V31L24 38L11.8756 31V17L24 10Z" fill="#5C7EC1"></path>
+          <path d="M12 24L16 20L20 28L28 16L32 26L36 24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <div>
+          <h1 class="text-xl font-serif text-brand-blue font-bold uppercase tracking-wide leading-tight">Blue Diamond</h1>
+          <p class="text-xs text-brand-blueLight tracking-widest uppercase">Medical Staffing</p>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors" href="#">HOME</a>
+        <a class="text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors" href="#">ABOUT US</a>
+        <div class="relative group">
+          <button class="flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors">
+            SERVICES
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+        </div>
+        <div class="relative group">
+          <button class="flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blueLight transition-colors">
+            JOBS
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </button>
+        </div>
+      </nav>
+      <!-- CTA -->
+      <div class="hidden sm:block">
+        <a class="bg-brand-dark text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-black transition-colors" href="#">
+          CONTACT US
+        </a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-brand-blue">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </button>
+    </div>
+  </header>
+  <!-- END: Header -->
+
+  <!-- BEGIN: Hero Section -->
+  <main class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative overflow-hidden">
+    <!-- Left Content -->
+    <div class="flex-1 w-full relative z-10">
+      <!-- Subheading -->
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="w-4 h-4 rounded-full bg-brand-blue"></span>
+        <span class="text-brand-blue uppercase text-sm font-medium tracking-wide">Welcome to Blue Diamond Medical Staffing</span>
+      </div>
+      <!-- Heading -->
+      <h2 class="text-5xl lg:text-7xl font-medium text-brand-dark leading-tight mb-6">
+        EXPERT <br class="hidden sm:block" />
+        <span class="italic-serif text-brand-blue">Healthcare</span> &amp; <br />
+        <span class="italic-serif text-brand-blue">Education</span> STAFFING <br />
+        SOLUTIONS
+      </h2>
+      <!-- Body Copy -->
+      <p class="text-gray-500 text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
+        Temporary, contract, and direct-hire staffing for longterm care, hospitals, clinics &amp; school districts
+      </p>
+      <!-- Actions -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+        <a class="inline-flex items-center justify-center bg-brand-dark text-white px-8 py-4 rounded-full text-base font-medium hover:bg-black transition-colors" href="#">
+          About Us
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </a>
+        <!-- Social Proof -->
+        <div class="flex items-center space-x-4">
+          <div class="flex -space-x-3">
+            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqBlg5K1ckPsYyxj8Nzxmyc_G8WxHE64LmMSLKhS7FEINRl2KF4VP8nQe8Ul8pV7-3epmSeDkR-JDeay51Tk3ocfl9gI5MeGOkIXBxgfOqg0OfSN2MQ5jNBBKWTLgoClZiSJYKtM_ZEdwuCLgBbMOfBIbQG0GQk6ec_1HnfLjIirBXzJxERnKnTJDJ2f5MRRUMrllUnGhMW2z5UVeK8IplOfhjXDr8GZBS3grEkbxrWW2H5XZJ2xIV" />
+            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWy8z8xIFWNTM7BcvyoSLwzE_QHTJp7h0ZSsnAsGSNZRFJBZv06I-r_mSPq1Al8c0QYDZWq2-zISh-bOnTiLkxntX-5iK2qa8DIT8WSf-9Iz29qvWWpf6TwCF87vI4PdWd8EaSOx0qBVLhhSYtDzfEv27mNnFUQJgtHMa4SGIVgo45zd-R3o3wE30HyQrER0kY6Jh3sScCP1cctjmvCAWzFpMoxAbyeNZRLAX_HxUmQX9iTezPiMRo" />
+            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKsBoBhyU4txzz4kK41emDBXUh2vB_Y_t3Gm4ghyMxHNxk7xU1sGNf5Vntl02jEjHeYYZtoe5SIjBAvEgVPCeh6-pcDRf4KEXPmO1MJMZjJXxskY3v7H4nEV_rbil0n5WvoTWjrhKQJllsJ6E47SpZ7g-fFNFSG4-aPm0fgvbDWR7GF9TCCTBWlJGBM8do1_2yeqMbGA_F5jqAGbL-a_EnRdMn6pVRUR0xgsDkk77fqm2YONkqVZH0" />
+            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW-6t0c48JU1ShDbEo2Ehg3sFGg30LM1dLF69EoLot_fZ35P2-3uUgdP5bzwUsFKUBWaHL7AKTaN3NxhK80t77ygTvPspYUl6DmUlsdl5fTgfmrIxrNKaOXZAIj03H2yqUP4otImbAcg1rsUeMhb8qD_b5zJPHWWooVPDl7c7MWOBW_8nrOk5ICr71wcF32DvmvFH3vMjeVgu39XNJtWrIqoobQs_nAIfeCXzq1QV8ogsKLQinxJBP" />
+          </div>
+          <span class="text-sm font-medium text-brand-dark uppercase tracking-wide">WE HAVE 1K+ CUSTOMER</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right Image -->
+    <div class="flex-1 w-full relative z-10 flex justify-end">
+      <!-- Decorative text behind image -->
+      <div class="absolute top-0 right-0 -mr-20 -mt-10 text-gray-300 uppercase tracking-[0.5em] text-sm whitespace-nowrap opacity-50 select-none z-0">
+        NSIVE • QUALITY • RELIABLE
+      </div>
+      <div class="relative w-full max-w-[600px] h-[600px] lg:h-[700px] rounded-[40px] overflow-hidden bg-gray-200 z-10 custom-shape shadow-2xl">
+        <img alt="Diverse team of healthcare and education professionals" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkVlDu_Q1PTs7e62dPUrTg9VhjmdIT5qkBfhP4WA5XsKwE9ypQApfls_YPHdlR6K21a1eBvL8QmSbIyz5VzovDKshGnwT9CWYx6q1mzmQGXvz2aymLMb3NDE3i9WE7tJ3Qpm1iaJvsXERJuYPx9TpcschfPwzZkltYQlVC13VPzVJ-jEKk4TB3EpdNmKXvQ_u3FdITHzIvqtWVHjmjVw0Kb_GBW0u1Vu_DsuQWfBkIQgIvdBFYEp02WTT7XlU_gHqpA" />
+      </div>
+    </div>
+  </main>
+  <!-- END: Hero Section -->
+</body>
+</html>
