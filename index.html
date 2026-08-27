@@ -21,7 +21,12 @@
             'brand-bg': '#f8f7f5',
             'card-bg': '#f1efe9',
             'text-dark': '#2c2c2c',
-            'text-muted': '#6b7280'
+            'text-muted': '#6b7280',
+            'brand-text': '#5A5A5A',
+            'grad-blue-start': '#5488D9',
+            'grad-blue-end': '#1A3978',
+            'grad-dark-start': '#4470C0',
+            'grad-dark-end': '#102A62'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -71,6 +76,9 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .animate-marquee { animation: none; }
+    }
+    .custom-image-mask {
+      clip-path: polygon(10% 0, 100% 0, 100% 80%, 80% 80%, 80% 100%, 10% 100%, 10% 20%, 0 20%, 0 10%);
     }
   </style>
 </head>
@@ -433,6 +441,99 @@
     </div>
   </section>
   <!-- END: Trusted Staffing Section -->
+
+  <!-- BEGIN: Real Stories Section -->
+  <section class="bg-brand-bg text-gray-800">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 lg:py-28">
+      <!-- Header area -->
+      <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
+        <div class="lg:w-1/2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-4 h-4 rounded-full bg-brand-blue"></div>
+            <span class="text-brand-blue uppercase tracking-wider text-sm font-semibold">Welcome to Blue Diamond Medical Staffing</span>
+          </div>
+          <h2 class="text-5xl lg:text-7xl font-light text-brand-dark leading-tight">
+            REAL <span class="italic-serif text-brand-blue">Stories</span>. REAL<br />
+            <span class="italic-serif text-brand-blue">Impact</span>.
+          </h2>
+        </div>
+        <div class="lg:w-5/12 space-y-6">
+          <p class="text-brand-text text-lg leading-relaxed">
+            We've helped countless professionals and employers connect with confidence. Whether you're hiring or applying, your success is our mission. Let us help write your next career or staffing chapter.
+          </p>
+          <a class="inline-flex items-center gap-2 bg-brand-dark text-white px-8 py-3 rounded-full hover:bg-black transition-colors font-medium" href="#contact">
+            Learn More
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </header>
+      <!-- Grid Content -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Column 1 -->
+        <div class="flex flex-col gap-6">
+          <div class="bg-card-bg rounded-2xl p-6 lg:p-8 shadow-sm">
+            <h3 class="text-brand-text mb-4">Professionals across the country.</h3>
+            <div class="bg-brand-dark rounded-md p-3 relative overflow-hidden">
+              <div class="absolute top-0 left-0 h-full w-[40%] bg-[#4A3D3A] opacity-50"></div>
+              <span class="relative z-10 text-white text-sm">1,000 professionals</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-6 flex-grow">
+            <div class="bg-gradient-to-b from-grad-blue-start to-grad-blue-end rounded-2xl p-6 text-white h-full shadow-lg">
+              <h3 class="font-bold text-xl mb-4 tracking-wide">MISSION</h3>
+              <p class="text-sm leading-relaxed text-blue-50">
+                To provide dependable staffing solutions that enhance care and education while creating growth opportunities for professionals.
+              </p>
+            </div>
+            <div class="bg-card-bg rounded-2xl p-6 h-full shadow-sm">
+              <h3 class="font-bold text-xl mb-4 text-brand-dark tracking-wide">VISION</h3>
+              <p class="text-sm leading-relaxed text-brand-dark">
+                To be a leading provider of trusted healthcare and education staffing across the U.S., known for quality, speed, and integrity.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Column 2 (Center Image) -->
+        <div class="lg:row-span-2 relative min-h-[400px] lg:min-h-[600px] flex items-center justify-center">
+          <div class="absolute inset-0 overflow-hidden p-2">
+            <img alt="Team discussing documents" class="w-full h-full object-cover rounded-3xl custom-image-mask shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoEWGeOsiWwdSZnZnN9oATgYR53ggQaddnrb3cqh-0AEpr5LlGfkFUnG1HrIM5Qel62LiGjtpvjLw04THAkZoSHAABBDENyfJxDd1bMwdgyrK4c9noZK02F7W75IRxfXFh6N50EybhQGQJy_pB_YYsY4ifmqKojfmHAzq23_8dG1XNL557pb6KRmd4gXXJ_pWhiW9V9o2pe1RvGxGMqpglT2hcGH0ztc8E-Fv5rKdInRXWd3uOg3Q7" />
+          </div>
+        </div>
+        <!-- Column 3 -->
+        <div class="flex flex-col gap-6">
+          <div class="bg-card-bg rounded-2xl p-8 shadow-sm flex flex-col justify-center">
+            <p class="text-6xl lg:text-7xl font-bold text-brand-dark italic mb-2">100%</p>
+            <p class="text-brand-text text-lg">Trustworthy</p>
+          </div>
+          <div class="bg-gradient-to-br from-grad-dark-start to-grad-dark-end rounded-2xl p-8 text-white shadow-xl relative overflow-hidden flex-grow flex flex-col justify-between gap-8">
+            <div>
+              <div class="flex gap-1 text-white mb-6">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.3 4.02a1 1 0 00.95.69h4.23c.97 0 1.37 1.24.59 1.81l-3.43 2.49a1 1 0 00-.36 1.12l1.31 4.03c.3.92-.75 1.68-1.54 1.11l-3.42-2.49a1 1 0 00-1.18 0l-3.42 2.49c-.79.57-1.84-.19-1.54-1.11l1.31-4.03a1 1 0 00-.36-1.12L1.73 9.45c-.78-.57-.38-1.81.59-1.81h4.23a1 1 0 00.95-.69l1.3-4.02z"></path></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.3 4.02a1 1 0 00.95.69h4.23c.97 0 1.37 1.24.59 1.81l-3.43 2.49a1 1 0 00-.36 1.12l1.31 4.03c.3.92-.75 1.68-1.54 1.11l-3.42-2.49a1 1 0 00-1.18 0l-3.42 2.49c-.79.57-1.84-.19-1.54-1.11l1.31-4.03a1 1 0 00-.36-1.12L1.73 9.45c-.78-.57-.38-1.81.59-1.81h4.23a1 1 0 00.95-.69l1.3-4.02z"></path></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.3 4.02a1 1 0 00.95.69h4.23c.97 0 1.37 1.24.59 1.81l-3.43 2.49a1 1 0 00-.36 1.12l1.31 4.03c.3.92-.75 1.68-1.54 1.11l-3.42-2.49a1 1 0 00-1.18 0l-3.42 2.49c-.79.57-1.84-.19-1.54-1.11l1.31-4.03a1 1 0 00-.36-1.12L1.73 9.45c-.78-.57-.38-1.81.59-1.81h4.23a1 1 0 00.95-.69l1.3-4.02z"></path></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.3 4.02a1 1 0 00.95.69h4.23c.97 0 1.37 1.24.59 1.81l-3.43 2.49a1 1 0 00-.36 1.12l1.31 4.03c.3.92-.75 1.68-1.54 1.11l-3.42-2.49a1 1 0 00-1.18 0l-3.42 2.49c-.79.57-1.84-.19-1.54-1.11l1.31-4.03a1 1 0 00-.36-1.12L1.73 9.45c-.78-.57-.38-1.81.59-1.81h4.23a1 1 0 00.95-.69l1.3-4.02z"></path></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.3 4.02a1 1 0 00.95.69h4.23c.97 0 1.37 1.24.59 1.81l-3.43 2.49a1 1 0 00-.36 1.12l1.31 4.03c.3.92-.75 1.68-1.54 1.11l-3.42-2.49a1 1 0 00-1.18 0l-3.42 2.49c-.79.57-1.84-.19-1.54-1.11l1.31-4.03a1 1 0 00-.36-1.12L1.73 9.45c-.78-.57-.38-1.81.59-1.81h4.23a1 1 0 00.95-.69l1.3-4.02z"></path></svg>
+              </div>
+              <p class="text-lg leading-relaxed">
+                The quality of staff exceeded expectations.
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img alt="Asher Luca" class="w-14 h-14 rounded-full border-2 border-white object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDptI5k5vUY7nZFUJMihFISHpfgqNokYkPpMhXCuAcagNTThgSqhPKkyYwhpV2pue6OieNzI9gvbU41vvHLxaS8WU95zbt81HwOV8ZAjZNOpTOXJfYh_qborXiPoPxAg6W7NEri4WxBZXxahDh4pZ2RRMOZbCMCvNtovis0B5CRE-4YYzzAV2la-X6f0Qav4ud2a9QTRTsB_6vIHdDWtKFqf2XA2IDoeJk14DcK8eX3bReGy97veFYE" />
+              <div>
+                <h4 class="font-semibold uppercase tracking-wider text-sm">ASHER LUCA</h4>
+                <span class="text-blue-200 text-sm">Client</span>
+              </div>
+            </div>
+            <div class="absolute bottom-6 right-6 opacity-80">
+              <svg fill="none" height="40" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M10 11H6C6 8.238 8.238 6 11 6V4C7.134 4 4 7.134 4 11V19H10V11ZM20 11H16C16 8.238 18.238 6 21 6V4C17.134 4 14 7.134 14 11V19H20V11Z" fill="white"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Real Stories Section -->
 
   <!-- BEGIN: Stats Bar -->
   <section class="bg-brand-blue text-white">
