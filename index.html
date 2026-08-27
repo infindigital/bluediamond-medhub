@@ -52,6 +52,26 @@
     .bg-gradient-blue {
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%);
     }
+    /* Marquee ribbon */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .card-overlay {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee { animation: none; }
+    }
   </style>
 </head>
 <body class="font-sans antialiased text-brand-textDark bg-white">
@@ -341,6 +361,78 @@
     </div>
   </section>
   <!-- END: What We Offer Section -->
+
+  <!-- BEGIN: Trusted Staffing Section -->
+  <section class="relative bg-blue-400 text-white py-20 overflow-hidden flex flex-col items-center rounded-t-[3rem]">
+    <!-- Top Label -->
+    <div class="flex items-center space-x-2 mb-6">
+      <div class="w-3 h-3 rounded-full bg-blue-800"></div>
+      <span class="text-sm font-semibold tracking-wider text-blue-800 uppercase">Quality Guaranteed</span>
+    </div>
+    <!-- Main Heading -->
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-light mb-16 text-center px-4">
+      TRUSTED <span class="italic-serif text-blue-800">Staffing</span> FOR EVERY NEED
+    </h2>
+    <!-- Cards Container -->
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mb-24">
+      <!-- Card 1: Healthcare Professionals -->
+      <div class="relative group rounded-3xl overflow-hidden h-[400px] md:h-[500px]">
+        <img alt="Healthcare Professionals" class="w-full h-full object-cover rounded-3xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgsUkzxW7E27dbJcBiMRCO1GQIpfr6irglQBE3yy0qo9v4wxWq2JaT6OK_CBGm_51KFuNcs1lyK9XiAiFDt8voauLr_SUCrHguH43AZE3epxFMUfB3-ks6HMvt19Cbnk2bm1tL24NO7ZtL7gH8v_up-7vfJRN9Xyiua986lbPBgkVFKY2Hlq6DGGEBjjSfhSSWSvNZBlVNHqe_zu9gesJidvJP-TdTb3ZfOULokOc3KDHKOkVuYDI2" />
+        <button aria-label="More Info" class="absolute top-4 right-4 bg-blue-800 hover:bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors z-10">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+        <div class="absolute bottom-4 left-4 right-4 card-overlay rounded-2xl p-6 flex items-start space-x-4 shadow-xl">
+          <div class="bg-black/30 p-2 rounded-full shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m3-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-1 leading-tight">HEALTHCARE<br />PROFESSIONALS</h3>
+            <p class="text-sm text-blue-100 italic">Compassionate. Experienced.<br />Reliable.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2: Teachers -->
+      <div class="relative group rounded-3xl overflow-hidden h-[400px] md:h-[500px]">
+        <img alt="Teachers &amp; Substitute Educators" class="w-full h-full object-cover rounded-3xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6YW17QKIUlnjZ6kJI4YVdad6LKwR7oZkwI-LAJllxQVwrDV0_rF5UDAMy470x-QvUq1zq-I3y44WiralSsmrte0I4mXw29ADHk9IdjdIzjyOj0gIWozpCHaTJGaeiVLyKt9LrTMpUSthKYD8PEJElycoEzmgedlJjNCCiGrgDe2aLeWA9gJAP0J7_jXtklRBKRQMzRYYsvpzuk3PvP7qRGuqTp-kK2HfxY_F8RQm8y_QMYHkI0ywc" />
+        <button aria-label="More Info" class="absolute top-4 right-4 bg-blue-800 hover:bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors z-10">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+        <div class="absolute bottom-4 left-4 right-4 card-overlay rounded-2xl p-6 flex items-start space-x-4 shadow-xl">
+          <div class="bg-black/30 p-2 rounded-full shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M12 14l6.16-3.42a12 12 0 01.84 4.42 12 12 0 01-7 2 12 12 0 01-7-2 12 12 0 01.84-4.42L12 14z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-1 leading-tight">TEACHERS &amp; SUBSTITUTE<br />EDUCATORS</h3>
+            <p class="text-sm text-blue-100 italic">Skilled. Dedicated. Certified.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: CPR Trainers -->
+      <div class="relative group rounded-3xl overflow-hidden h-[400px] md:h-[500px]">
+        <img alt="CPR Trainers" class="w-full h-full object-cover rounded-3xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr6V2vuLUPB5Z-gTjHK2lbQqHLOhE7WV2XOioGSy542x3uHCsWkAKCBfHHI4pRUXgrYodNhFmWHZXeidARa3EPKgDMwVzbl-Xf3pTWTjlRHcF5Jpi0D_FcFqdMmU4rTblZbmvN0dvm5D9u9Rq6P1O3za-i-fser4QgGvt9ngYvANJurJ5LbdBuuVInFIHYAKHu8fbsmBA1ko8GsIe9ELUWMMewnhC_gQS2Ucy2BlZL0JWg5dno1BRg" />
+        <button aria-label="More Info" class="absolute top-4 right-4 bg-blue-800 hover:bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors z-10">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+        <div class="absolute bottom-4 left-4 right-4 card-overlay rounded-2xl p-6 flex items-start space-x-4 shadow-xl">
+          <div class="bg-black/30 p-2 rounded-full shrink-0">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-1 leading-tight">CPR TRAINERS</h3>
+            <p class="text-sm text-blue-100 italic">Accredited. Friendly. Effective.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Marquee Ribbon -->
+    <div class="w-full bg-blue-300 py-6 marquee-container border-y border-blue-200">
+      <div class="animate-marquee text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-widest flex items-center">
+        <span>QUALITY <span class="text-blue-600 mx-4">*</span> RELIABLE <span class="text-blue-600 mx-4">*</span> RESPONSIBLE <span class="text-blue-600 mx-4">*</span> </span>
+        <span>QUALITY <span class="text-blue-600 mx-4">*</span> RELIABLE <span class="text-blue-600 mx-4">*</span> RESPONSIBLE <span class="text-blue-600 mx-4">*</span> </span>
+      </div>
+    </div>
+  </section>
+  <!-- END: Trusted Staffing Section -->
 
   <!-- BEGIN: Stats Bar -->
   <section class="bg-brand-blue text-white">
