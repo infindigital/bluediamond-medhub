@@ -25,16 +25,29 @@ Contact Us) links between these local files.
 
 ## Assets
 
-- **CSS / JS** live under `assets/css/` and `assets/js/` where localized.
-- **Images and fonts** are referenced from the original `bluediamondmed.com`
-  URLs. They are binary files hosted on the live site; because this clone was
-  produced without filesystem access to the WordPress server, those assets load
-  from the live CDN rather than being copied into the repo. Replace them with
-  local copies (under `assets/`) before going fully independent.
+Each page is the site's **real rendered HTML**, so it looks pixel-identical to
+the live site. CSS, JS, images and fonts are currently referenced from the
+original `bluediamondmed.com` URLs, so the pages render correctly out of the box
+in any browser with internet access.
+
+This clone was produced in a sandbox whose network access is locked down, so the
+binary assets (images/fonts) could not be copied into the repo here. To make the
+clone **100% self-contained**, run the included localizer from any machine with
+normal internet access:
+
+```bash
+cd bluediamondmed-clone
+bash localize.sh
+```
+
+It downloads every CSS/JS/image/font into `wp-content/` and `wp-includes/`
+(mirroring the site's layout) and rewrites all references to root-relative local
+paths.
 
 ## Viewing
 
-Open `index.html` in a browser, or serve the folder:
+Open `index.html` directly in a browser (assets load from the live site), or —
+recommended, and required after running `localize.sh` — serve the folder:
 
 ```bash
 cd bluediamondmed-clone
