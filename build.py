@@ -30,6 +30,30 @@ PAGES = {
 os.makedirs(OUT, exist_ok=True)
 
 
+def fix_lazy_backgrounds(html):
+    """Elementor lazy-loads section background images: an injected <style> sets
+    `background-image:none !important` on parent containers until its JS adds the
+    `e-lazyloaded` class on scroll. In a static snapshot that suppresses most
+    section backgrounds. Remove the gating <style> and mark every container as
+    loaded so all backgrounds render immediately."""
+    # Drop the injected style block that suppresses lazy backgrounds.
+    html = re.sub(
+        r'<style>[^<]*background-image:\s*none\s*!important[^<]*</style>',
+        '', html, flags=re.DOTALL)
+    # Ensure every Elementor container (.e-con) also carries .e-lazyloaded.
+    def add_class(m):
+        cls = m.group(1)
+        if 'e-con' in cls and 'e-lazyloaded' not in cls:
+            cls = cls + ' e-lazyloaded'
+        return f'class="{cls}"'
+    html = re.sub(r'class="([^"]*\be-con\b[^"]*)"', add_class, html)
+    # Elementor hides entrance-animated elements with `elementor-invisible`
+    # (opacity:0) until its JS runs. In a static mirror that can leave images
+    # and content blank, so strip the class to show everything immediately.
+    html = re.sub(r'\s*\belementor-invisible\b', '', html)
+    return html
+
+
 def rewrite_nav(html):
     # href="https://bluediamondmed.com/slug/" or without trailing slash -> local file
     def repl(m):
@@ -50,6 +74,7 @@ def main():
     for f in sorted(glob.glob(f"{SRC}/*.html")):
         name = os.path.basename(f)
         html = open(f, encoding="utf-8", errors="replace").read()
+        html = fix_lazy_backgrounds(html)
         html = rewrite_nav(html)
         open(os.path.join(OUT, name), "w", encoding="utf-8").write(html)
         count += 1
