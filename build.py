@@ -29,6 +29,23 @@ PAGES = {
 
 os.makedirs(OUT, exist_ok=True)
 
+IMG_EXT = "png|jpe?g|gif|svg|webp|avif|ico"
+IMG_RE = re.compile(
+    r'https://bluediamondmed\.com/([^"\'\s,)]+?\.(?:' + IMG_EXT + r'))(\?[^"\'\s,)]*)?')
+# Collected local image paths (relative, query stripped) -> a live source URL.
+IMAGES = {}
+
+
+def localize_images(html):
+    """Point every <img>/srcset/favicon image at a local relative path (query
+    stripped) and record where it came from, so the folders can be created and
+    the user can drop the real files in."""
+    def repl(m):
+        path = m.group(1)
+        IMAGES[path] = "https://bluediamondmed.com/" + path
+        return path
+    return IMG_RE.sub(repl, html)
+
 
 def fix_lazy_backgrounds(html):
     """Elementor lazy-loads section background images: an injected <style> sets
@@ -75,11 +92,29 @@ def main():
         name = os.path.basename(f)
         html = open(f, encoding="utf-8", errors="replace").read()
         html = fix_lazy_backgrounds(html)
+        html = localize_images(html)
         html = rewrite_nav(html)
         open(os.path.join(OUT, name), "w", encoding="utf-8").write(html)
         count += 1
         print("built", name)
+
+    # Create the image folder tree (with .gitkeep so empty dirs are tracked)
+    # and a manifest listing each expected file and its live source URL.
+    dirs = sorted({os.path.dirname(p) for p in IMAGES})
+    for d in dirs:
+        full = os.path.join(OUT, d)
+        os.makedirs(full, exist_ok=True)
+        open(os.path.join(full, ".gitkeep"), "a").close()
+    manifest = os.path.join(OUT, "IMAGES-NEEDED.txt")
+    with open(manifest, "w") as fh:
+        fh.write("# Images referenced by the clone. Save each file at the local\n"
+                 "# path on the left; download it from the URL on the right.\n"
+                 f"# {len(IMAGES)} files.\n\n")
+        for p in sorted(IMAGES):
+            fh.write(f"{p}\t{IMAGES[p]}\n")
+
     print(f"\n{count} pages written to {OUT}/")
+    print(f"{len(IMAGES)} image paths across {len(dirs)} folders; manifest: {manifest}")
 
 
 if __name__ == "__main__":

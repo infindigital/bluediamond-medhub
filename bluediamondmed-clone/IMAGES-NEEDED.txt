@@ -1,0 +1,50 @@
+# Images referenced by the clone. Save each file at the local
+# path on the left; download it from the URL on the right.
+# 46 files.
+
+wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-1024x296.png	https://bluediamondmed.com/wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-1024x296.png
+wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-1536x444.png	https://bluediamondmed.com/wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-1536x444.png
+wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-2048x591.png	https://bluediamondmed.com/wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-2048x591.png
+wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-300x87.png	https://bluediamondmed.com/wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-300x87.png
+wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-768x222.png	https://bluediamondmed.com/wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING-768x222.png
+wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING.png	https://bluediamondmed.com/wp-content/uploads/2025/05/BLUE-DIAMOND-MEDICAL-STAFFING.png
+wp-content/uploads/2025/05/Testi1-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi1-150x150.jpg
+wp-content/uploads/2025/05/Testi1-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi1-300x300.jpg
+wp-content/uploads/2025/05/Testi1-650x650.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi1-650x650.jpg
+wp-content/uploads/2025/05/Testi1.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi1.jpg
+wp-content/uploads/2025/05/Testi2-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi2-150x150.jpg
+wp-content/uploads/2025/05/Testi2-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi2-300x300.jpg
+wp-content/uploads/2025/05/Testi2-650x650.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi2-650x650.jpg
+wp-content/uploads/2025/05/Testi2.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi2.jpg
+wp-content/uploads/2025/05/Testi3-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi3-150x150.jpg
+wp-content/uploads/2025/05/Testi3-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi3-300x300.jpg
+wp-content/uploads/2025/05/Testi3-650x650.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi3-650x650.jpg
+wp-content/uploads/2025/05/Testi3.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi3.jpg
+wp-content/uploads/2025/05/Testi4-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi4-150x150.jpg
+wp-content/uploads/2025/05/Testi4-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi4-300x300.jpg
+wp-content/uploads/2025/05/Testi4-650x650.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi4-650x650.jpg
+wp-content/uploads/2025/05/Testi4.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Testi4.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379-150x150.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379-300x300.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379-768x765.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379-768x765.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-21T131851.379.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658-150x150.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658-300x300.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658-768x765.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658-768x765.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150732.658.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797-150x150.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797-300x300.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797-768x765.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797-768x765.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T150934.797.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071-150x150.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071-300x300.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071-768x765.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071-768x765.jpg
+wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/Untitled-design-2025-05-23T203353.071.jpg
+wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-180x180.png	https://bluediamondmed.com/wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-180x180.png
+wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-192x192.png	https://bluediamondmed.com/wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-192x192.png
+wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-270x270.png	https://bluediamondmed.com/wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-270x270.png
+wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-32x32.png	https://bluediamondmed.com/wp-content/uploads/2025/05/cropped-cropped-BLUE-DIAMOND-MEDICAL-STAFFING-32x32.png
+wp-content/uploads/2025/05/image-Busify-1-150x150.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/image-Busify-1-150x150.jpg
+wp-content/uploads/2025/05/image-Busify-1-300x300.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/image-Busify-1-300x300.jpg
+wp-content/uploads/2025/05/image-Busify-1-768x765.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/image-Busify-1-768x765.jpg
+wp-content/uploads/2025/05/image-Busify-1.jpg	https://bluediamondmed.com/wp-content/uploads/2025/05/image-Busify-1.jpg

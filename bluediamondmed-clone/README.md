@@ -26,23 +26,37 @@ Contact Us) links between these local files.
 ## Assets
 
 Each page is the site's **real rendered HTML**, so it looks pixel-identical to
-the live site. CSS, JS, images and fonts are currently referenced from the
-original `bluediamondmed.com` URLs, so the pages render correctly out of the box
-in any browser with internet access.
+the live site.
 
-This clone was produced in a sandbox whose network access is locked down, so the
-binary assets (images/fonts) could not be copied into the repo here. To make the
-clone **100% self-contained**, run the included localizer from any machine with
-normal internet access:
+### Images — add them here
+
+Every `<img>` on the pages points at a **local relative path** under:
+
+```
+wp-content/uploads/2025/05/
+```
+
+That folder already exists (empty). Drop the image files into it and they show
+up automatically. **`IMAGES-NEEDED.txt`** lists all 46 expected files: the local
+path on the left, the URL to download it from on the right. Filenames must match
+exactly (including the size-suffixed variants like `...-300x300.jpg`, which the
+`srcset` responsive sizes use).
+
+### CSS / JS / fonts / section backgrounds
+
+These still load from the original `bluediamondmed.com` URLs, so the pages render
+correctly in any browser with internet access. To pull them local too and make
+the clone **100% self-contained**, run the included localizer from any machine
+with normal internet access:
 
 ```bash
 cd bluediamondmed-clone
 bash localize.sh
 ```
 
-It downloads every CSS/JS/image/font into `wp-content/` and `wp-includes/`
-(mirroring the site's layout) and rewrites all references to root-relative local
-paths.
+It downloads every remaining CSS/JS/font/background asset into `wp-content/` and
+`wp-includes/` (mirroring the site's layout) and rewrites the references. (It
+leaves the `<img>` paths alone, since those are already local.)
 
 ## Viewing
 
