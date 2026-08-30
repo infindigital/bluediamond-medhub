@@ -32,18 +32,23 @@ os.makedirs(OUT, exist_ok=True)
 IMG_EXT = "png|jpe?g|gif|svg|webp|avif|ico"
 IMG_RE = re.compile(
     r'https://bluediamondmed\.com/([^"\'\s,)]+?\.(?:' + IMG_EXT + r'))(\?[^"\'\s,)]*)?')
-# Collected local image paths (relative, query stripped) -> a live source URL.
-IMAGES = {}
+SIZE_SUFFIX = re.compile(r'-\d+x\d+(?=\.\w+$)')  # e.g. Testi1-300x300.jpg -> Testi1.jpg
+IMGDIR = "img"  # local folder holding the actual image files
+IMAGES = set()  # base filenames referenced across the pages
 
 
 def localize_images(html):
-    """Point every <img>/srcset/favicon image at a local relative path (query
-    stripped) and record where it came from, so the folders can be created and
-    the user can drop the real files in."""
+    """Point every <img>/srcset/favicon image at the local img/ folder. WordPress
+    generates size variants (name-300x300.jpg) from one upload; we only have the
+    base files, so collapse every variant to its base filename."""
     def repl(m):
-        path = m.group(1)
-        IMAGES[path] = "https://bluediamondmed.com/" + path
-        return path
+        fn = os.path.basename(m.group(1))
+        base = SIZE_SUFFIX.sub('', fn)
+        # Favicon uses cropped-* variants we don't have; fall back to the logo.
+        if base.startswith('cropped-') and 'BLUE-DIAMOND-MEDICAL-STAFFING' in base:
+            base = 'BLUE-DIAMOND-MEDICAL-STAFFING.png'
+        IMAGES.add(base)
+        return f'{IMGDIR}/{base}'
     return IMG_RE.sub(repl, html)
 
 
@@ -98,23 +103,15 @@ def main():
         count += 1
         print("built", name)
 
-    # Create the image folder tree (with .gitkeep so empty dirs are tracked)
-    # and a manifest listing each expected file and its live source URL.
-    dirs = sorted({os.path.dirname(p) for p in IMAGES})
-    for d in dirs:
-        full = os.path.join(OUT, d)
-        os.makedirs(full, exist_ok=True)
-        open(os.path.join(full, ".gitkeep"), "a").close()
-    manifest = os.path.join(OUT, "IMAGES-NEEDED.txt")
-    with open(manifest, "w") as fh:
-        fh.write("# Images referenced by the clone. Save each file at the local\n"
-                 "# path on the left; download it from the URL on the right.\n"
-                 f"# {len(IMAGES)} files.\n\n")
-        for p in sorted(IMAGES):
-            fh.write(f"{p}\t{IMAGES[p]}\n")
-
+    # Report which referenced <img> files are present in the local img/ folder.
+    have = set(os.listdir(os.path.join(OUT, IMGDIR))) if os.path.isdir(
+        os.path.join(OUT, IMGDIR)) else set()
+    missing = sorted(b for b in IMAGES if b not in have)
     print(f"\n{count} pages written to {OUT}/")
-    print(f"{len(IMAGES)} image paths across {len(dirs)} folders; manifest: {manifest}")
+    print(f"{len(IMAGES)} distinct <img> files referenced; "
+          f"{len(IMAGES) - len(missing)} present in {IMGDIR}/, {len(missing)} missing.")
+    for m in missing:
+        print("  MISSING:", m)
 
 
 if __name__ == "__main__":
