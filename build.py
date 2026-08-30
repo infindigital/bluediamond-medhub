@@ -114,6 +114,10 @@ def main():
     count = 0
     for f in sorted(glob.glob(f"{SRC}/*.html")):
         name = os.path.basename(f)
+        # index.html is built separately from the browser-saved, fully-local
+        # home page (see localize_home.py); don't overwrite it here.
+        if name == "index.html":
+            continue
         html = open(f, encoding="utf-8", errors="replace").read()
         html = fix_lazy_backgrounds(html)
         html = localize_images(html)
