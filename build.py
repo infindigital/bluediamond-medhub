@@ -91,6 +91,38 @@ def rewrite_nav(html):
     return html
 
 
+def add_image_gallery(html):
+    """Insert a responsive gallery of every file in img/ just before the footer
+    (home page only)."""
+    imgdir = os.path.join(OUT, IMGDIR)
+    files = sorted(f for f in os.listdir(imgdir)
+                   if f.lower().endswith(
+                       ('.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'))
+                   ) if os.path.isdir(imgdir) else []
+    cards = "\n".join(
+        f'        <figure style="margin:0;border-radius:12px;overflow:hidden;'
+        f'box-shadow:0 6px 18px rgba(0,0,0,.08);background:#fff">'
+        f'<img src="{IMGDIR}/{f}" alt="{os.path.splitext(f)[0]}" loading="lazy" '
+        f'style="width:100%;height:240px;object-fit:cover;display:block"></figure>'
+        for f in files)
+    section = (
+        '<section style="background:#f5f4f0;padding:72px 20px">\n'
+        '  <div style="max-width:1200px;margin:0 auto">\n'
+        '    <h2 style="text-align:center;font-family:\'Playfair Display\',Georgia,serif;'
+        'color:#1C3887;font-size:36px;margin:0 0 10px">Our Gallery</h2>\n'
+        '    <p style="text-align:center;color:#5A5A5A;margin:0 0 40px;font-family:Inter,sans-serif">'
+        'Blue Diamond Medical Staffing</p>\n'
+        '    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px">\n'
+        f'{cards}\n'
+        '    </div>\n'
+        '  </div>\n'
+        '</section>\n')
+    marker = '<footer data-elementor-type="footer"'
+    if marker in html:
+        html = html.replace(marker, section + marker, 1)
+    return html
+
+
 def main():
     count = 0
     for f in sorted(glob.glob(f"{SRC}/*.html")):
@@ -99,6 +131,8 @@ def main():
         html = fix_lazy_backgrounds(html)
         html = localize_images(html)
         html = rewrite_nav(html)
+        if name == "index.html":
+            html = add_image_gallery(html)
         open(os.path.join(OUT, name), "w", encoding="utf-8").write(html)
         count += 1
         print("built", name)
