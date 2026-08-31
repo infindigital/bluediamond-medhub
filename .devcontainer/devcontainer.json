@@ -1,0 +1,12 @@
+{
+  "name": "Blue Diamond clone",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Blue Diamond site",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postAttachCommand": "cd bluediamondmed-clone && python3 -m http.server 8000"
+}
